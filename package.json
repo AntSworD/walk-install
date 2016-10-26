@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "walk-install": "bin/walk-install"
+  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/AntSworD/walk-install.git"
@@ -21,5 +24,10 @@
   "bugs": {
     "url": "https://github.com/AntSworD/walk-install/issues"
   },
-  "homepage": "https://github.com/AntSworD/walk-install#readme"
+  "homepage": "https://github.com/AntSworD/walk-install#readme",
+  "dependencies": {
+    "commander": "^2.9.0",
+    "glob": "^7.1.1",
+    "shelljs": "^0.7.4"
+  }
 }

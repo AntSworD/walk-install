@@ -1,0 +1,32 @@
+#! /usr/bin/env node
+
+'use strict';
+
+const program = require('commander');
+const glob = require('glob');
+const shell = require('shelljs');
+const path = require('path');
+const pkg = require('../package.json');
+
+let folderValue = '.';
+program
+  .usage('<folder>')
+  .arguments('<folder>')
+  .action(function (folder) {
+     folderValue = folder;
+  })
+  .version(pkg.version)
+  .parse(process.argv);
+
+let folderList = glob.sync("**/package.json", {
+  root: path.resolve(process.cwd(), folderValue),
+  ignore: 'node_modules/**',
+  realpath: true
+}).map(path.dirname);
+
+let pwd = shell.pwd();
+for (let path of folderList) {
+  shell.cd(path);
+  shell.exec('npm install --silent', { stdio: 'inherit' });
+}
+shell.cd(pwd);
