@@ -1,0 +1,25 @@
+{
+  "name": "walk-install",
+  "version": "1.0.0",
+  "description": "walk folder and npm install",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/AntSworD/walk-install.git"
+  },
+  "keywords": [
+    "walk",
+    "folder",
+    "npm",
+    "install"
+  ],
+  "author": "AntSworD (zhengjj.asd@gmail.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AntSworD/walk-install/issues"
+  },
+  "homepage": "https://github.com/AntSworD/walk-install#readme"
+}
