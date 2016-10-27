@@ -24,9 +24,11 @@ let folderList = glob.sync("**/package.json", {
   realpath: true
 }).map(path.dirname);
 
+console.log(`[WALK_INSTALL] total ${ folderList.length } project need \`npm install\``);
 let pwd = shell.pwd();
 for (let path of folderList) {
   shell.cd(path);
+  console.log(`npm install in [${ shell.pwd() }]`);
   shell.exec('npm install --silent', { stdio: 'inherit' });
 }
 shell.cd(pwd);
